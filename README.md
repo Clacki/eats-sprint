@@ -34,3 +34,6 @@ src/
   data/
   pages/
 ```
+### 4) API Docs (Swagger)
+API 설명서는 Swagger UI에서 확인할 수 있습니다.
+https://oz-coding-school.github.io/FE-pre-project-swagger-ui/
