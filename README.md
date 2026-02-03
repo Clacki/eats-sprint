@@ -24,3 +24,13 @@ npm run dev
 npm install
 node app.js
 ```
+
+### 3) 폴더구조
+```
+src/
+  app/
+  assets/
+  components/
+  data/
+  pages/
+```
