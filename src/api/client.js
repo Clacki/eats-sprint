@@ -2,13 +2,23 @@
 
 const BASE_URL = "http://localhost:3000";
 
-export default async function getPlaces() {
-  const res = await fetch(`${BASE_URL}/places`);
+export default async function fetchPlaces() {
+  let res;
 
-  if (!res.ok) throw new Error(`응답 실패 ${res.status}`);
+  try {
+    res = await fetch(`${BASE_URL}/places`);
+  } catch (networkError) {
+    const err = new Error("서버에 연결할 수 없습니다.");
+    err.status = 0;
+    throw err;
+  }
+
+  if (!res.ok) {
+    const err = new Error(`HTTP Error: ${res.status}`);
+    err.status = res.status;
+    throw err;
+  }
 
   const data = await res.json();
-  console.log(data.places);
-
   return data.places;
 }
