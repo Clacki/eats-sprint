@@ -2,7 +2,9 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 const FavoritesContext = createContext(null);
-const API_BASE = import.meta.env.VITE_API_BASE;
+
+const BASE_URL = import.meta.env.VITE_API_BASE;
+const API_BASE = `${BASE_URL}/`;
 
 export function FavoritesProvider({ children }) {
   const [favorites, setFavorites] = useState([]);
