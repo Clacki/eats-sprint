@@ -34,16 +34,12 @@ function Home() {
   if (errorStatus !== null) return <ErrorMessage status={errorStatus} />;
   return (
     <main>
-      {/* HERO: 풀폭 */}
       <section className="relative h-[600px]  bg-[#F7EBDD]">
         {/* 배경 이미지 */}
         <img src={map} alt="" className="absolute inset-0 h-full w-full object-cover object-right" />
 
-        {/* 좌/우 페이드 */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#F7EBDD] via-[#F7EBDD]/30 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-l from-[#F7EBDD] via-[#F7EBDD]/30 to-transparent" />
-
-        {/* 컨텐츠 컨테이너 */}
         <div className="relative mx-auto max-w-6xl px-4 py-10">
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
@@ -53,7 +49,7 @@ function Home() {
               </h1>
               <p className="mt-3 text-sm text-gray-700">지금 가까운 맛집을 검색해보세요.</p>
 
-              {/* 검색 */}
+              {/* 검색바 */}
               <div className="mt-6 flex max-w-md overflow-hidden rounded-xl border bg-white shadow-sm">
                 <input className="flex-1 px-4 py-3 outline-none" placeholder="지역/가게명을 입력하세요" />
                 <button className="px-5 font-semibold text-white bg-orange-500 hover:bg-orange-600">
@@ -61,7 +57,6 @@ function Home() {
                 </button>
               </div>
 
-              {/* 왼쪽 미니 카드 리스트 (places 일부만) */}
               <div className="mt-6 max-w-md space-y-3">
                 {places.slice(0, 3).map((place) => (
                   <div
@@ -76,10 +71,7 @@ function Home() {
                     />
                     <div className="min-w-0">
                       <div className="truncate font-semibold">{place.title}</div>
-                      <div className="mt-1 text-xs text-gray-600">
-                        {/* 일단 더미, 나중에 place.rating / distance 붙이면 됨 */}
-                        평점 4.7 · 500m
-                      </div>
+                      <div className="mt-1 text-xs text-gray-600">평점 4.7 · 500m</div>
                     </div>
                     <span className="ml-auto text-gray-400">›</span>
                   </div>
@@ -87,7 +79,6 @@ function Home() {
               </div>
             </div>
 
-            {/* 오른쪽은 배경 이미지만 보이게 비움 */}
             <div className="hidden lg:block" />
           </div>
         </div>
@@ -112,7 +103,6 @@ function Home() {
                       className="h-28 w-full object-cover"
                       loading="lazy"
                     />
-                    {/* 이미지 아래에 살짝 그라데이션(텍스트 대비/고급스러움) */}
                     <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/15 to-transparent" />
                   </div>
 
@@ -123,11 +113,10 @@ function Home() {
                         <div className="mt-1 line-clamp-2 text-xs text-[#6b5a4e]">{p.description}</div>
                       </div>
 
-                      {/* 오른쪽 화살표 */}
                       <span className="ml-auto text-lg text-[#c9b7a6]">›</span>
                     </div>
 
-                    {/* 카테고리 pill (데이터 없으면 임시) */}
+                    {/* 카테고리 */}
                     <div className="mt-3 flex gap-2">
                       <span className="rounded-full bg-[#ffe5cf] px-2 py-1 text-[11px] font-semibold text-[#d46a2f]">
                         {p.category ?? "한식"}
