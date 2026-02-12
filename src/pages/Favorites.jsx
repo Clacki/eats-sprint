@@ -2,7 +2,9 @@
 import { useState } from "react";
 import { useFavorites } from "@/context/FavoritesProvider";
 
-const IMAGE_BASE = "http://localhost:3000/";
+const BASE_URL = import.meta.env.VITE_API_BASE;
+
+const IMAGE_BASE = `${BASE_URL}/`;
 
 export default function Favorites() {
   const { favorites, removeFavorite } = useFavorites();
