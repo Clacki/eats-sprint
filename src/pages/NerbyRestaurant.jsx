@@ -27,7 +27,7 @@ export default function NearbyRestraunt() {
         setPlacesError(null);
 
         const data = await fetchPlaces();
-        setPlaces(Array.isArray(data) ? data : []); // ✅ 핵심: data 자체가 배열
+        setPlaces(Array.isArray(data) ? data : []);
       } catch (e) {
         setPlacesError(e);
       } finally {
@@ -38,7 +38,7 @@ export default function NearbyRestraunt() {
 
   const sortedPlaces = useMemo(() => {
     if (!places.length) return [];
-    if (!position) return places; // ✅ 위치 없으면 원본
+    if (!position) return places;
     return sortPlacesByDistance(places, position.lat, position.lon);
   }, [places, position]);
 
