@@ -16,7 +16,9 @@ function Header() {
         <Link to="/NerbyRestaurant">
           <div className="font-bold text-2xl">내 근처 맛집</div>
         </Link>
-        <div className="font-bold text-2xl">찜한 맛집</div>
+        <Link to="/Favorites">
+          <div className="font-bold text-2xl">찜한 맛집</div>
+        </Link>
       </nav>
     </header>
   );
