@@ -6,7 +6,8 @@ import PlacesSkeleton from "./PlacesSkeleton";
 import ErrorMessage from "./ErrorMessage";
 import map from "@/assets/mainMapImage.png";
 
-const IMAGE_BASE = "http://localhost:3000/";
+const BASE_URL = import.meta.env.VITE_API_BASE;
+const IMAGE_BASE = `${BASE_URL}/`;
 
 function Home() {
   const [places, setPlaces] = useState([]);
